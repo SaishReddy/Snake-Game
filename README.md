@@ -3,7 +3,7 @@
 This is a just a snake game
 
 
-##Built With
+## Built With
 * [Python](https://www.python.org/)
 * [Pygame](https://www.pygame.org/news.html)
 
