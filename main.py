@@ -1,4 +1,3 @@
-'''@author Vipen Loka'''
 import sys,pygame
 import time
 from random import randrange
@@ -68,7 +67,7 @@ def change_direction(i):
 
 pygame.init()
 pygame.display.set_mode((500,500))
-pygame.display.set_caption("Snake @author Vipen Loka")
+pygame.display.set_caption("Snake Game")
 screen=pygame.display.get_surface()
 
 # pygame.draw.rect(screen,(0,255,255),(200,200,10,10))
