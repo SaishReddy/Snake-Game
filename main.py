@@ -56,13 +56,13 @@ def frame_update():
 def change_direction(i):
 	# print(i.key)
 	global direction
-	if i.key==pygame.K_UP and direction!='d':
+	if i.key in [pygame.K_w,pygame.K_UP] and direction!='d':
 		direction='u'
-	elif i.key==pygame.K_DOWN and direction!='u':
+	elif i.key in [pygame.K_s,pygame.K_DOWN] and direction!='u':
 		direction='d'
-	elif i.key==pygame.K_LEFT and direction!='r':
+	elif i.key in [pygame.K_a,pygame.K_LEFT] and direction!='r':
 		direction='l'
-	elif i.key==pygame.K_RIGHT and direction!='l':
+	elif i.key in [pygame.K_d,pygame.K_RIGHT] and direction!='l':
 		direction='r'
 
 
