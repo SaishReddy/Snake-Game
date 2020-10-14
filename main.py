@@ -75,6 +75,12 @@ def change_direction(j):
         direction = 'r'
 
 
+# fn for text
+def text_objects(text, fonts):
+    text_surface = fonts.render(text, True, (255, 255, 255))
+    return text_surface, text_surface.get_rect()
+
+
 pygame.init()
 pygame.display.set_mode((500, 500))
 pygame.display.set_caption("Snake Game")
@@ -97,6 +103,10 @@ while 1:
             change_direction(i)
             if i.key == pygame.K_p:
                 pause ^= 1
+                pause_text = pygame.font.SysFont(name="comicsansms", size=27)
+                text_surf, text_rect = text_objects(text="Paused", fonts=pause_text)
+                text_rect.center = (46, 20)
+                screen.blit(text_surf, text_rect)
 
     if not pause and time.time() - previous_time > 0.05:
         previous_time = time.time()
