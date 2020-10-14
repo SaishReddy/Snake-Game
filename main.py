@@ -103,10 +103,10 @@ while 1:
             change_direction(i)
             if i.key == pygame.K_p:
                 pause ^= 1
-                pause_text = pygame.font.SysFont(name="comicsansms", size=27)
-                text_surf, text_rect = text_objects(text="Paused", fonts=pause_text)
-                text_rect.center = (46, 20)
-                screen.blit(text_surf, text_rect)
+                pause_text = pygame.font.SysFont(name="comicsansms", size=27)  # Font name, size
+                text_surf, text_rect = text_objects(text="Paused", fonts=pause_text)  # Text, font
+                text_rect.center = (46, 20)  # Defining the centre of text rectangle
+                screen.blit(text_surf, text_rect)  # Overlap the rectangle surface on the the screen at a position.
 
     if not pause and time.time() - previous_time > 0.05:
         previous_time = time.time()
