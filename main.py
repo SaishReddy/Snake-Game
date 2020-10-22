@@ -60,6 +60,7 @@ def display_candy():
 def frame_update():
     head_move()
     display_candy()
+    display_score(pause == 1)  # Score function gets called.
 
 
 def change_direction(j):
@@ -112,7 +113,6 @@ previous_time = 0
 direction = 'r'
 pause = 0
 while 1:
-    display_score(pause == 1)  # Score function gets called.
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
             pygame.quit()
