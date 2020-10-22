@@ -58,8 +58,9 @@ def display_candy():
 
 
 def frame_update():
-    head_move()
-    display_candy()
+    if not pause:
+        head_move()
+        display_candy()
     display_score(pause == 1)  # Score function gets called.
 
 
@@ -126,7 +127,7 @@ while 1:
                 text_rect.center = (46, 20)  # Defining the centre of text rectangle
                 screen.blit(text_surf, text_rect)  # Overlap the rectangle surface on the the screen at a position.
 
-    if not pause and time.time() - previous_time > 0.05:
+    if time.time() - previous_time > 0.05:
         previous_time = time.time()
         # head_move()
         frame_update()
