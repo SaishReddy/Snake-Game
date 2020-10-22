@@ -81,6 +81,23 @@ def text_objects(text, fonts):
     return text_surface, text_surface.get_rect()
 
 
+def display_score(paused=False):
+    """
+    A function to display score: [int].
+    :param paused: If the game is paused the text "Score" is visible along with number
+    :return: a surface displaying score upon the main surface.
+    """
+    score_text = pygame.font.SysFont('comicsansms', size=20)
+    # score_surf, score_rect = text_objects(text="Score:{}".format(score), fonts=score_text)
+    if not paused:
+        score_surf, score_rect = text_objects(text="{}".format(score), fonts=score_text)
+        score_rect.center = (500 - 10, 10)
+    else:
+        score_surf, score_rect = text_objects(text="Score:{}".format(score), fonts=score_text)
+        score_rect.center = (500 - 40, 10)
+    screen.blit(score_surf, score_rect)
+
+
 pygame.init()
 pygame.display.set_mode((500, 500))
 pygame.display.set_caption("Snake Game")
@@ -95,6 +112,7 @@ previous_time = 0
 direction = 'r'
 pause = 0
 while 1:
+    display_score(pause == 1)  # Score function gets called.
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
             pygame.quit()
